@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://eq546fpgalo1"]
+
+[ext_resource type="Script" uid="uid://egd3dkdaoyjg" path="res://Main/Products/Code/Items.cs" id="1_g7c6v"]
+[ext_resource type="Texture2D" uid="uid://b74127etnutta" path="res://materials/wood/wood.png" id="2_ppetn"]
+[ext_resource type="Texture2D" uid="uid://dviiwq3fydnf1" path="res://materials/rocks/rock2.png" id="3_lm0cf"]
+[ext_resource type="Texture2D" uid="uid://bwoo1k2loku4d" path="res://materials/rocks/rock1.png" id="4_7gqby"]
+[ext_resource type="Texture2D" uid="uid://brogb10g6ocid" path="res://materials/materials uncooked/iron ore.png" id="5_qwy6o"]
+[ext_resource type="Texture2D" uid="uid://dotybsy6pg2rw" path="res://materials/materials uncooked/gold ore.png" id="6_qb3os"]
+[ext_resource type="Texture2D" uid="uid://dw41ie7pnbjqs" path="res://materials/materials uncooked/diamond ore.png" id="7_6t601"]
+[ext_resource type="Texture2D" uid="uid://c4hb4vkf38p6e" path="res://materials/materials uncooked/emerald ore.png" id="8_hw5oq"]
+[ext_resource type="Texture2D" uid="uid://cal6odcypw68" path="res://materials/materials cooked/iron cooked.png" id="9_6vw1b"]
+[ext_resource type="Texture2D" uid="uid://drmk1xqm43iy3" path="res://materials/materials cooked/gold cooked.png" id="10_sd15m"]
+[ext_resource type="Texture2D" uid="uid://d374t32vntu1l" path="res://materials/materials cooked/diamond cooked.png" id="11_aw6kh"]
+[ext_resource type="Texture2D" uid="uid://cipuciwcbwy16" path="res://materials/materials cooked/emerald cooked.png" id="12_lt82q"]
+
+[node name="Product" type="Node2D" unique_id=1970612316]
+z_index = 10
+script = ExtResource("1_g7c6v")
+
+[node name="Timber" type="Sprite2D" parent="." unique_id=286782287]
+unique_name_in_owner = true
+z_index = 5
+texture_filter = 1
+texture = ExtResource("2_ppetn")
+
+[node name="Rock1" type="Sprite2D" parent="." unique_id=1002917142]
+unique_name_in_owner = true
+z_index = 5
+texture_filter = 1
+texture = ExtResource("3_lm0cf")
+
+[node name="Rock2" type="Sprite2D" parent="." unique_id=2083751617]
+unique_name_in_owner = true
+z_index = 5
+texture_filter = 1
+texture = ExtResource("4_7gqby")
+
+[node name="IronRaw" type="Sprite2D" parent="." unique_id=1017778241]
+unique_name_in_owner = true
+z_index = 5
+texture_filter = 1
+texture = ExtResource("5_qwy6o")
+
+[node name="GoldRaw" type="Sprite2D" parent="." unique_id=2119493923]
+unique_name_in_owner = true
+z_index = 5
+texture_filter = 1
+texture = ExtResource("6_qb3os")
+
+[node name="DiamondRaw" type="Sprite2D" parent="." unique_id=1116217788]
+unique_name_in_owner = true
+z_index = 5
+texture_filter = 1
+texture = ExtResource("7_6t601")
+
+[node name="EmeraldRaw" type="Sprite2D" parent="." unique_id=1913111187]
+unique_name_in_owner = true
+z_index = 5
+texture_filter = 1
+texture = ExtResource("8_hw5oq")
+
+[node name="Iron" type="Sprite2D" parent="." unique_id=1432845636]
+unique_name_in_owner = true
+z_index = 5
+texture_filter = 1
+texture = ExtResource("9_6vw1b")
+
+[node name="Gold" type="Sprite2D" parent="." unique_id=1160613477]
+unique_name_in_owner = true
+z_index = 5
+texture_filter = 1
+texture = ExtResource("10_sd15m")
+
+[node name="Diamond" type="Sprite2D" parent="." unique_id=2078375131]
+unique_name_in_owner = true
+z_index = 5
+texture_filter = 1
+texture = ExtResource("11_aw6kh")
+
+[node name="Emerald" type="Sprite2D" parent="." unique_id=319921156]
+unique_name_in_owner = true
+z_index = 5
+texture_filter = 1
+texture = ExtResource("12_lt82q")

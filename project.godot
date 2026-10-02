@@ -1,0 +1,49 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Gross Domestic Pollution"
+config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalValues="*uid://bcrkfor710ddn"
+SignalBus="*uid://bsxyctwii3obj"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="Gross Domestic Pollution"
+
+[file_customization]
+
+folder_colors={
+"res://AutoLoads/": "gray",
+"res://Main/": "red",
+"res://Main/Products/": "orange",
+"res://Main/Textures/": "teal"
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

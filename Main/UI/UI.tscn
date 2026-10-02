@@ -1,0 +1,690 @@
+[gd_scene format=3 uid="uid://b8mjadtk110vs"]
+
+[ext_resource type="Script" uid="uid://cw37ekfbr1yg5" path="res://Main/UI/Code/Ui.cs" id="1_4j75p"]
+[ext_resource type="Theme" uid="uid://dc6pnp2fd1v6l" path="res://MainUI.tres" id="1_41lfm"]
+[ext_resource type="Theme" uid="uid://m5bthj3orxe" path="res://UpgradesUI.tres" id="2_g8hvd"]
+[ext_resource type="Texture2D" uid="uid://t1ep4a2uahvi" path="res://Kenney/tile_0039.png" id="2_vsffh"]
+[ext_resource type="Texture2D" uid="uid://i5xlx5xxrryq" path="res://Red_Ribbon.png" id="4_y4j3r"]
+[ext_resource type="Texture2D" uid="uid://cyut48rb4rf0h" path="res://Kenney/tile_0081.png" id="5_c164r"]
+
+[sub_resource type="Animation" id="Animation_4j75p"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PanelContainer:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-650, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-164, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_c164r"]
+resource_name = "UI"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PanelContainer:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 1),
+"points": PackedFloat32Array(-650, -0.25, 0, 0.25, 0, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(1, 1, 1),
+"points": PackedFloat32Array(-164, -0.25, 0, 0.25, 0, -140, 0, 0, 0, 0, -164, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ps6yo"]
+_data = {
+&"RESET": SubResource("Animation_4j75p"),
+&"UI": SubResource("Animation_c164r")
+}
+
+[node name="Upgrades Menu" type="Control" unique_id=311652995]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_4j75p")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=502593177]
+z_index = -1
+texture_filter = 1
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6527778
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -650.0
+offset_bottom = -650.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_41lfm")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1971220114]
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=95029837]
+texture_filter = 1
+layout_mode = 2
+
+[node name="TitleBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1023160824]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TitleBox" unique_id=1216015986]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "= Upgrades ="
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=412404759]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=315444487]
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+tile_scroll_hint = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1928521307]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Upgrade1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=647529665]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade1" unique_id=252260730]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade1/MarginContainer" unique_id=964630089]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade1/MarginContainer/HBoxContainer" unique_id=1233009389]
+layout_mode = 2
+texture = ExtResource("2_vsffh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade1/MarginContainer/HBoxContainer" unique_id=1957818892]
+layout_mode = 2
+text = "Upgrade 0"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade1/MarginContainer/HBoxContainer" unique_id=32108066]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade1/MarginContainer/HBoxContainer" unique_id=1639227113]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="Upgrade2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1061720697]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade2" unique_id=1839377822]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade2/MarginContainer" unique_id=1761226857]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade2/MarginContainer/HBoxContainer" unique_id=528397792]
+layout_mode = 2
+texture = ExtResource("2_vsffh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade2/MarginContainer/HBoxContainer" unique_id=1640166361]
+layout_mode = 2
+text = "Upgrade 1"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade2/MarginContainer/HBoxContainer" unique_id=908202473]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade2/MarginContainer/HBoxContainer" unique_id=722917228]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="Upgrade3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1337963975]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade3" unique_id=19695297]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade3/MarginContainer" unique_id=891829498]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade3/MarginContainer/HBoxContainer" unique_id=1971429746]
+layout_mode = 2
+texture = ExtResource("2_vsffh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade3/MarginContainer/HBoxContainer" unique_id=1389174381]
+layout_mode = 2
+text = "Upgrade 2"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade3/MarginContainer/HBoxContainer" unique_id=628064221]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade3/MarginContainer/HBoxContainer" unique_id=464876927]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="Upgrade4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1556160626]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade4" unique_id=338992197]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade4/MarginContainer" unique_id=1507744222]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade4/MarginContainer/HBoxContainer" unique_id=152697420]
+layout_mode = 2
+texture = ExtResource("2_vsffh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade4/MarginContainer/HBoxContainer" unique_id=1524617108]
+layout_mode = 2
+text = "Upgrade 3"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade4/MarginContainer/HBoxContainer" unique_id=362585127]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade4/MarginContainer/HBoxContainer" unique_id=1440189336]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="Upgrade5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=679800696]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade5" unique_id=1075864425]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade5/MarginContainer" unique_id=109721099]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade5/MarginContainer/HBoxContainer" unique_id=827827122]
+layout_mode = 2
+texture = ExtResource("2_vsffh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade5/MarginContainer/HBoxContainer" unique_id=2007484703]
+layout_mode = 2
+text = "Upgrade 4"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade5/MarginContainer/HBoxContainer" unique_id=1654267264]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade5/MarginContainer/HBoxContainer" unique_id=1629534450]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="Upgrade6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=131141001]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade6" unique_id=1144362214]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade6/MarginContainer" unique_id=2082409362]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade6/MarginContainer/HBoxContainer" unique_id=1049689632]
+layout_mode = 2
+texture = ExtResource("2_vsffh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade6/MarginContainer/HBoxContainer" unique_id=453236805]
+layout_mode = 2
+text = "Upgrade 5"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade6/MarginContainer/HBoxContainer" unique_id=1037900179]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade6/MarginContainer/HBoxContainer" unique_id=1334601539]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="Upgrade7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1075275727]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade7" unique_id=616045822]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade7/MarginContainer" unique_id=633332594]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade7/MarginContainer/HBoxContainer" unique_id=1553152682]
+layout_mode = 2
+texture = ExtResource("2_vsffh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade7/MarginContainer/HBoxContainer" unique_id=398004779]
+layout_mode = 2
+text = "Upgrade 6"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade7/MarginContainer/HBoxContainer" unique_id=1614540528]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade7/MarginContainer/HBoxContainer" unique_id=1706897855]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="Upgrade8" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1115939448]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade8" unique_id=940725577]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade8/MarginContainer" unique_id=240304050]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade8/MarginContainer/HBoxContainer" unique_id=892129210]
+layout_mode = 2
+texture = ExtResource("2_vsffh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade8/MarginContainer/HBoxContainer" unique_id=541191179]
+layout_mode = 2
+text = "Upgrade 7"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade8/MarginContainer/HBoxContainer" unique_id=1272186521]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade8/MarginContainer/HBoxContainer" unique_id=1876871955]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="Upgrade9" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=124246326]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade9" unique_id=460634408]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade9/MarginContainer" unique_id=1235357721]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade9/MarginContainer/HBoxContainer" unique_id=1566669813]
+layout_mode = 2
+texture = ExtResource("2_vsffh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade9/MarginContainer/HBoxContainer" unique_id=1567688765]
+layout_mode = 2
+text = "Upgrade 8"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade9/MarginContainer/HBoxContainer" unique_id=1622758930]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade9/MarginContainer/HBoxContainer" unique_id=32016358]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="Upgrade10" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=319521796]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade10" unique_id=1639772137]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade10/MarginContainer" unique_id=781776845]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade10/MarginContainer/HBoxContainer" unique_id=1569916582]
+layout_mode = 2
+texture = ExtResource("2_vsffh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade10/MarginContainer/HBoxContainer" unique_id=1370496838]
+layout_mode = 2
+text = "Upgrade 9"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade10/MarginContainer/HBoxContainer" unique_id=1592744040]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Upgrade10/MarginContainer/HBoxContainer" unique_id=1637357375]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="EcoUpgrade1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1087105077]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade1" unique_id=437798066]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade1/MarginContainer" unique_id=522539558]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade1/MarginContainer/HBoxContainer" unique_id=1090923945]
+layout_mode = 2
+texture = ExtResource("5_c164r")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade1/MarginContainer/HBoxContainer" unique_id=715076650]
+layout_mode = 2
+text = "Eco Upgrade 0"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade1/MarginContainer/HBoxContainer" unique_id=2059760625]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade1/MarginContainer/HBoxContainer" unique_id=366098710]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="EcoUpgrade2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=830673520]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade2" unique_id=1417892194]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade2/MarginContainer" unique_id=1467249407]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade2/MarginContainer/HBoxContainer" unique_id=1417933282]
+layout_mode = 2
+texture = ExtResource("5_c164r")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade2/MarginContainer/HBoxContainer" unique_id=1956719533]
+layout_mode = 2
+text = "Eco Upgrade 1"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade2/MarginContainer/HBoxContainer" unique_id=122448872]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade2/MarginContainer/HBoxContainer" unique_id=777514393]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="EcoUpgrade3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=934191227]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade3" unique_id=613335327]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade3/MarginContainer" unique_id=1221711479]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade3/MarginContainer/HBoxContainer" unique_id=2035868848]
+layout_mode = 2
+texture = ExtResource("5_c164r")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade3/MarginContainer/HBoxContainer" unique_id=745662859]
+layout_mode = 2
+text = "Eco Upgrade 2"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade3/MarginContainer/HBoxContainer" unique_id=44903365]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade3/MarginContainer/HBoxContainer" unique_id=757710714]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="EcoUpgrade4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2062373619]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade4" unique_id=900784575]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade4/MarginContainer" unique_id=370122650]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade4/MarginContainer/HBoxContainer" unique_id=102926620]
+layout_mode = 2
+texture = ExtResource("5_c164r")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade4/MarginContainer/HBoxContainer" unique_id=2036453874]
+layout_mode = 2
+text = "Eco Upgrade 3"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade4/MarginContainer/HBoxContainer" unique_id=2101545137]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade4/MarginContainer/HBoxContainer" unique_id=938764771]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="EcoUpgrade5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=510869453]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g8hvd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade5" unique_id=1273183525]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade5/MarginContainer" unique_id=1732821872]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade5/MarginContainer/HBoxContainer" unique_id=277114626]
+layout_mode = 2
+texture = ExtResource("5_c164r")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade5/MarginContainer/HBoxContainer" unique_id=2078909035]
+layout_mode = 2
+text = "Eco Upgrade 4"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade5/MarginContainer/HBoxContainer" unique_id=416692078]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/EcoUpgrade5/MarginContainer/HBoxContainer" unique_id=939197619]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_g8hvd")
+text = "Price"
+
+[node name="PullUpUpgrades" type="Button" parent="." unique_id=354358118]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+z_index = 3
+layout_mode = 0
+anchor_left = 0.6267361
+anchor_right = 0.6545139
+anchor_bottom = 0.049382716
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1745590213]
+custom_maximum_size = Vector2(200, 35)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6293403
+anchor_top = -0.25300002
+anchor_right = 0.66
+anchor_bottom = 0.056
+offset_left = 35.0
+offset_top = -0.055984497
+offset_right = 199.68
+offset_bottom = -165.29865
+rotation = 1.5707964
+mouse_filter = 2
+texture = ExtResource("4_y4j3r")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Pullout" type="AnimationPlayer" parent="." unique_id=939149166]
+unique_name_in_owner = true
+root_node = NodePath("../TextureRect")
+libraries/ = SubResource("AnimationLibrary_ps6yo")
+playback_auto_capture_transition_type = 3
+playback_auto_capture_ease_type = 2
+speed_scale = 1.5
