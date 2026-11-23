@@ -1,0 +1,13 @@
+[gd_resource type="Theme" format=3 uid="uid://y8nd3s62ef3k"]
+
+[ext_resource type="Texture2D" uid="uid://bwwpdbf2rin60" path="res://Kenney/tile_0005.png" id="1_qcnfe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_juyaa"]
+texture = ExtResource("1_qcnfe")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_juyaa")

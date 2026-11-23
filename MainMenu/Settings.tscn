@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://ddr6b711k4wnx"]
+
+[ext_resource type="Script" uid="uid://gcchu2kt53ek" path="res://MainMenu/Settings.cs" id="1_3cen4"]
+[ext_resource type="Theme" uid="uid://bkiv6u51dk0h3" path="res://MainMenuQuit.tres" id="1_6bf22"]
+[ext_resource type="Texture2D" uid="uid://btaqo1uxnxnhr" path="res://Main/Textures/Background/pixelart_starfield_diagonal_diffraction_spikes.png" id="1_j1who"]
+[ext_resource type="Theme" uid="uid://b6smspy8mor21" path="res://sliders.tres" id="1_vtxd1"]
+[ext_resource type="Theme" uid="uid://ctwf07oqq0cn" path="res://MainMenuPlay.tres" id="1_yubl2"]
+[ext_resource type="Theme" uid="uid://xdopwbocd5i5" path="res://Selection.tres" id="2_nxpei"]
+[ext_resource type="Texture2D" uid="uid://b3vua6khgq7ba" path="res://Main/Audio/bg-music/yd.png" id="2_uq76x"]
+[ext_resource type="Texture2D" uid="uid://dsgvuhv5eyp7t" path="res://Main/Audio/bg-music/symp.png" id="3_nxobd"]
+
+[sub_resource type="Gradient" id="Gradient_dg77c"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j1who"]
+gradient = SubResource("Gradient_dg77c")
+
+[sub_resource type="Animation" id="Animation_dg77c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fadeout:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ycdy4"]
+resource_name = "fading"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fadeout:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yubl2"]
+_data = {
+&"RESET": SubResource("Animation_dg77c"),
+&"fading": SubResource("Animation_ycdy4")
+}
+
+[node name="Control" type="Control" unique_id=1896997749]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3cen4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1228999815]
+z_index = 15
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1581162850]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "= Settings ="
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1580627183]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 55
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=423685249]
+layout_mode = 2
+theme_override_constants/separation = 21
+
+[node name="MasterContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=145056400]
+layout_mode = 2
+
+[node name="Master" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/MasterContainer" unique_id=468899679]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+
+[node name="MasterVolume" type="HSlider" parent="VBoxContainer/MarginContainer/VBoxContainer/MasterContainer" unique_id=56635108]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_vtxd1")
+value = 85.0
+tick_count = 20
+ticks_position = 3
+
+[node name="MusicVolume" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1915584795]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/MusicVolume" unique_id=1473130547]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Music Volume"
+
+[node name="MusicVolume" type="HSlider" parent="VBoxContainer/MarginContainer/VBoxContainer/MusicVolume" unique_id=211032538]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_vtxd1")
+value = 85.0
+tick_count = 20
+ticks_position = 3
+
+[node name="SFXContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=29261698]
+layout_mode = 2
+
+[node name="SFX" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SFXContainer" unique_id=2007198435]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "SFX Volume"
+
+[node name="SFXVolume" type="HSlider" parent="VBoxContainer/MarginContainer/VBoxContainer/SFXContainer" unique_id=1933896698]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_vtxd1")
+value = 85.0
+tick_count = 20
+ticks_position = 3
+
+[node name="AudioSelection" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1856443541]
+layout_mode = 2
+
+[node name="SFX" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/AudioSelection" unique_id=1377416335]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Select a Background Track"
+
+[node name="SongSelect" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/AudioSelection" unique_id=1676466860]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(0, 70)
+custom_maximum_size = Vector2(-1, 70)
+layout_mode = 2
+theme = ExtResource("2_nxpei")
+selected = 0
+item_count = 2
+popup/item_0/text = "My Very Own Dead Ship-yd"
+popup/item_0/icon = ExtResource("2_uq76x")
+popup/item_0/id = 0
+popup/item_1/text = "One Man Symphony - UltiDigi⁄After The Disaster"
+popup/item_1/icon = ExtResource("3_nxobd")
+popup/item_1/id = 1
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=988916517]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="return" type="Button" parent="VBoxContainer" unique_id=1344316707]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("1_6bf22")
+theme_override_font_sizes/font_size = 24
+text = "Return to Main Menu"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2087899965]
+z_index = 12
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_yubl2")
+texture = ExtResource("1_j1who")
+metadata/_edit_use_anchors_ = true
+
+[node name="Fadeout" type="TextureRect" parent="." unique_id=1063485731]
+z_index = 140
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_j1who")
+metadata/_edit_use_anchors_ = true
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=634429454]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_yubl2")
+playback_auto_capture_transition_type = 1
+playback_auto_capture_ease_type = 3
+speed_scale = 5.0

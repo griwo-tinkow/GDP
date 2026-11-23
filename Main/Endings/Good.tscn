@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://dh04f7g43unhi"]
+
+[ext_resource type="Script" uid="uid://suqm02jhxnn4" path="res://Main/Endings/Ending.cs" id="1_ntdsn"]
+[ext_resource type="Texture2D" uid="uid://3i2x3oc58485" path="res://Main/Textures/Background/image6.jpg" id="2_bdkbs"]
+[ext_resource type="Theme" uid="uid://bkiv6u51dk0h3" path="res://MainMenuQuit.tres" id="3_5q6it"]
+
+[sub_resource type="Gradient" id="Gradient_dg77c"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ntdsn"]
+gradient = SubResource("Gradient_dg77c")
+
+[sub_resource type="Animation" id="Animation_dg77c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fadeout:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ycdy4"]
+resource_name = "fading"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fadeout:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bdkbs"]
+_data = {
+&"RESET": SubResource("Animation_dg77c"),
+&"fading": SubResource("Animation_ycdy4")
+}
+
+[node name="Control" type="Control" unique_id=237231317]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ntdsn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1011052714]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bdkbs")
+expand_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1434912529]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=339131379]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1393491945]
+self_modulate = Color(0.1333332, 1, 0, 1)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 75
+text = "YOU WON!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer" unique_id=381711936]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "The last plume of dark smoke has vanished from the skyline. By shutting down the dirty industrial generators and transitioning fully to renewable energy, you saved the valley from total environmental collapse. The factories are clean, the air is clear, and despite the loss of auto-income, your eco-friendly empire stands as a beacon of sustainable innovation. You proved that real progress doesn't have to cost the planet.s"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=71862832]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1325492438]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_5q6it")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 45
+text = "   Back to Main Menu   "
+
+[node name="Fadeout" type="TextureRect" parent="." unique_id=1879703484]
+z_index = 140
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_ntdsn")
+metadata/_edit_use_anchors_ = true
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1475743704]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_bdkbs")
+playback_auto_capture_transition_type = 1
+playback_auto_capture_ease_type = 3
+speed_scale = 4.5

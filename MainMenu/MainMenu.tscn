@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://c0wj34con75yh"]
+
+[ext_resource type="Script" uid="uid://67wksstl11b5" path="res://MainMenu/MainMenu.cs" id="1_lbqne"]
+[ext_resource type="Texture2D" uid="uid://3i2x3oc58485" path="res://Main/Textures/Background/image6.jpg" id="1_otibh"]
+[ext_resource type="Theme" uid="uid://bkiv6u51dk0h3" path="res://MainMenuQuit.tres" id="2_b76km"]
+[ext_resource type="Theme" uid="uid://ctwf07oqq0cn" path="res://MainMenuPlay.tres" id="3_lbqne"]
+
+[sub_resource type="Gradient" id="Gradient_dg77c"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lbqne"]
+gradient = SubResource("Gradient_dg77c")
+
+[sub_resource type="Animation" id="Animation_dg77c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fadeout:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ycdy4"]
+resource_name = "fading"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fadeout:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_430ii"]
+_data = {
+&"RESET": SubResource("Animation_dg77c"),
+&"fading": SubResource("Animation_ycdy4")
+}
+
+[node name="Control" type="Control" unique_id=462392934]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lbqne")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=726322794]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_otibh")
+expand_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1578603535]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.15895061
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 20
+theme_override_font_sizes/font_size = 75
+text = "Gross Domestic Pollution"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fadeout" type="TextureRect" parent="." unique_id=1964746813]
+z_index = 140
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_lbqne")
+metadata/_edit_use_anchors_ = true
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=608288554]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_430ii")
+playback_auto_capture_transition_type = 1
+playback_auto_capture_ease_type = 3
+speed_scale = 4.5
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=917273537]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3046875
+anchor_top = 0.24074075
+anchor_right = 0.6953125
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+alignment = 1
+vertical = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Button" parent="BoxContainer" unique_id=253553100]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(450, 120)
+custom_maximum_size = Vector2(450, 120)
+layout_mode = 2
+theme = ExtResource("3_lbqne")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 60
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Button" parent="BoxContainer" unique_id=1376030906]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(450, 120)
+custom_maximum_size = Vector2(450, 120)
+layout_mode = 2
+theme = ExtResource("2_b76km")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 60
+text = "Settings"
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits" type="Button" parent="BoxContainer" unique_id=98146075]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(450, 120)
+custom_maximum_size = Vector2(450, 120)
+layout_mode = 2
+theme = ExtResource("3_lbqne")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 60
+text = "Credits"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="BoxContainer" unique_id=2120553277]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(450, 120)
+custom_maximum_size = Vector2(450, 120)
+layout_mode = 2
+theme = ExtResource("2_b76km")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 60
+text = "Quit"
+metadata/_edit_use_anchors_ = true

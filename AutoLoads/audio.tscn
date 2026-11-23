@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://wj4lfje1iupd"]
+
+[ext_resource type="Script" uid="uid://bev4sl18btmgx" path="res://AutoLoads/AudioManager.cs" id="1_a7hfl"]
+[ext_resource type="AudioStream" uid="uid://q68k8npsygu2" path="res://Main/Audio/bg-music/MyVeryOwnDeadShip-yd.ogg" id="2_caobh"]
+[ext_resource type="AudioStream" uid="uid://cm8jt8xlk2xyd" path="res://Main/Audio/BuyUpgrade.ogg" id="4_cvh8l"]
+[ext_resource type="AudioStream" uid="uid://d3effhiic71fm" path="res://Main/Audio/OreMining.ogg" id="5_17ibl"]
+[ext_resource type="AudioStream" uid="uid://wa742dl6kko3" path="res://Main/Audio/Wood.ogg" id="6_6aa4v"]
+[ext_resource type="AudioStream" uid="uid://nxbtvcsx4g0g" path="res://Main/Audio/Victory.ogg" id="7_brn7q"]
+[ext_resource type="AudioStream" uid="uid://yinncavh1fik" path="res://Main/Audio/Defeat.ogg" id="8_srbom"]
+
+[node name="AudioManager" type="Node" unique_id=1395189680 node_paths=PackedStringArray("_musicPlayer")]
+script = ExtResource("1_a7hfl")
+_musicPlayer = NodePath("MusicPlayer")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=695174496]
+unique_name_in_owner = true
+stream = ExtResource("2_caobh")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Buy" type="AudioStreamPlayer" parent="." unique_id=2119464079]
+unique_name_in_owner = true
+stream = ExtResource("4_cvh8l")
+bus = &"SFX"
+
+[node name="Click-M" type="AudioStreamPlayer" parent="." unique_id=1773098766]
+unique_name_in_owner = true
+stream = ExtResource("5_17ibl")
+bus = &"SFX"
+
+[node name="Click-W" type="AudioStreamPlayer" parent="." unique_id=1630326397]
+unique_name_in_owner = true
+stream = ExtResource("6_6aa4v")
+bus = &"SFX"
+
+[node name="Win" type="AudioStreamPlayer" parent="." unique_id=669966245]
+unique_name_in_owner = true
+stream = ExtResource("7_brn7q")
+bus = &"SFX"
+
+[node name="Lose" type="AudioStreamPlayer" parent="." unique_id=876520640]
+unique_name_in_owner = true
+stream = ExtResource("8_srbom")
+bus = &"SFX"

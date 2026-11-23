@@ -2,8 +2,12 @@
 
 [ext_resource type="Script" uid="uid://8er2xixx6wcd" path="res://Main/MainLogic.cs" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://byhnrkhcov1n0" path="res://Main/Textures/earthspin-sheet.png" id="1_ig7tw"]
+[ext_resource type="Theme" uid="uid://y8nd3s62ef3k" path="res://MoneyInfo.tres" id="3_4c57u"]
 [ext_resource type="Texture2D" uid="uid://b63vud6urh75c" path="res://materials/tile00.png" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://cy00537qxxabx" path="res://2D bars/rock_bar.png" id="3_dg77c"]
+[ext_resource type="PackedScene" uid="uid://twii2i6eyrry" path="res://Main/click_particles.tscn" id="3_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://cdog5fh3eqc2c" path="res://materials/tile01.png" id="4_5vw27"]
+[ext_resource type="Texture2D" uid="uid://tc1tblsc7y3j" path="res://2D bars/elve_bar.png" id="4_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://c0we6kyx4vx33" path="res://materials/tile02.png" id="5_kek77"]
 [ext_resource type="Texture2D" uid="uid://dfoxuaopf47to" path="res://materials/tile03.png" id="6_4c57u"]
 [ext_resource type="Texture2D" uid="uid://ccjosml3mmld5" path="res://materials/tile04.png" id="7_efxa6"]
@@ -689,6 +693,50 @@ frame_3/duration = 1.0
 frame_4/texture = ExtResource("7_efxa6")
 frame_4/duration = 1.0
 
+[sub_resource type="Gradient" id="Gradient_dg77c"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b4vb6"]
+gradient = SubResource("Gradient_dg77c")
+
+[sub_resource type="Animation" id="Animation_dg77c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fadeout:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ycdy4"]
+resource_name = "fading"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fadeout:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w48qg"]
+_data = {
+&"RESET": SubResource("Animation_dg77c"),
+&"fading": SubResource("Animation_ycdy4")
+}
+
 [node name="Control" type="Control" unique_id=812980337]
 z_index = 1
 texture_repeat = 2
@@ -702,16 +750,16 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_0xm2m")
+_clParticles = ExtResource("3_ycdy4")
 metadata/_edit_use_anchors_ = true
 
 [node name="Earth" type="AnimatedSprite2D" parent="." unique_id=544290836]
 unique_name_in_owner = true
 z_index = 1
 texture_filter = 1
-position = Vector2(348.99997, 284.99997)
+position = Vector2(348.99994, 284.99994)
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_0xm2m")
-frame_progress = 0.63656884
 
 [node name="Button" type="Button" parent="Earth" unique_id=1381433968]
 unique_name_in_owner = true
@@ -729,13 +777,65 @@ grow_vertical = 2
 shortcut_feedback = false
 shortcut_in_tooltip = false
 
-[node name="Score" type="Label" parent="." unique_id=602644381]
+[node name="PollutionBar" type="TextureProgressBar" parent="Earth" unique_id=1749792558]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(40, 10)
+anchors_preset = -1
+anchor_left = 0.083333336
+anchor_right = 0.9166667
+anchor_bottom = 0.16666667
+offset_left = -4.000002
+offset_top = -24.0
+offset_right = -44.0
+offset_bottom = -32.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -12)
+step = 0.01
+value = 25.0
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = ExtResource("4_ycdy4")
+texture_progress = ExtResource("3_dg77c")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1730562159]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.1736111
+anchor_bottom = 0.19135803
+offset_right = -199.0
+offset_bottom = -50.0
+theme = ExtResource("3_4c57u")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=568683486]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=909389589]
+layout_mode = 2
+alignment = 1
+
+[node name="Score" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=602644381]
 unique_name_in_owner = true
 z_index = 1
-layout_mode = 1
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 2
 theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="mps" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1972103334]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
 
 [node name="Fire" type="TextureRect" parent="." unique_id=2115920155]
 unique_name_in_owner = true
@@ -784,7 +884,8 @@ anchor_bottom = 1.066358
 offset_bottom = 6.1035156e-05
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=643929199]
+[node name="Background" type="TextureRect" parent="." unique_id=643929199]
+unique_name_in_owner = true
 z_index = -10
 texture_filter = 3
 layout_mode = 1
@@ -804,3 +905,22 @@ metadata/_edit_use_anchors_ = true
 z_index = 100
 layout_mode = 1
 mouse_filter = 2
+
+[node name="Fadeout" type="TextureRect" parent="." unique_id=746020506]
+z_index = 140
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_b4vb6")
+metadata/_edit_use_anchors_ = true
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=607654215]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_w48qg")
+playback_auto_capture_transition_type = 1
+playback_auto_capture_ease_type = 3
+speed_scale = 1.5

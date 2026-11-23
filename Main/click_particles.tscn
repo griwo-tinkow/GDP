@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://twii2i6eyrry"]
+
+[ext_resource type="Script" uid="uid://w8txyv37jmg0" path="res://MainMenu/ClickParticles.cs" id="1_dcl8d"]
+[ext_resource type="Texture2D" uid="uid://v6pcuyj8o4a1" path="res://particles/tile000.png" id="1_lsihs"]
+
+[sub_resource type="Gradient" id="Gradient_ycdy4"]
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.7151899, 1)
+colors = PackedColorArray(0.25882354, 0.40392157, 0.1254902, 1, 0.61960787, 0.6627451, 0.3137255, 1, 0.3372549, 0.3372549, 0.3372549, 1)
+
+[node name="ClickParticles" type="CPUParticles2D" unique_id=1796862472]
+scale = Vector2(0.28571424, 0.28571424)
+emitting = false
+amount = 65
+texture = ExtResource("1_lsihs")
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.55
+draw_order = 1
+emission_shape = 2
+emission_sphere_radius = 128.0
+spread = 180.0
+initial_velocity_min = 300.0
+initial_velocity_max = 750.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+damping_min = 100.0
+damping_max = 100.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.07
+scale_amount_max = 0.22
+color_ramp = SubResource("Gradient_ycdy4")
+script = ExtResource("1_dcl8d")

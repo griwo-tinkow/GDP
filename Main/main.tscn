@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b5ebe386ndair"]
+[gd_scene format=3 uid="uid://cych7nak0mkie"]
 
 [ext_resource type="Script" uid="uid://8er2xixx6wcd" path="res://Main/MainLogic.cs" id="1_2w1kt"]
 [ext_resource type="Texture2D" uid="uid://byhnrkhcov1n0" path="res://Main/Textures/earthspin-sheet.png" id="2_qvhan"]

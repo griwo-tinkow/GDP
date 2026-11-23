@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://c1ppecbc47wie"]
+
+[ext_resource type="Theme" uid="uid://m5bthj3orxe" path="res://UpgradesUI.tres" id="1_r0o4v"]
+[ext_resource type="Script" uid="uid://c3xny5dorj58o" path="res://Main/UI/Code/UpgradeDisplay.cs" id="2_q7p53"]
+[ext_resource type="Texture2D" uid="uid://dpw1bhu70jdt5" path="res://Main/Textures/Tools.png" id="3_o8srm"]
+
+[node name="Upgrade1" type="PanelContainer" unique_id=282025085]
+z_index = 1
+texture_filter = 1
+custom_minimum_size = Vector2(370, 70)
+anchors_preset = -1
+anchor_right = 0.28385416
+anchor_bottom = 0.108024694
+offset_right = -327.0
+offset_bottom = -70.0
+size_flags_horizontal = 3
+theme = ExtResource("1_r0o4v")
+script = ExtResource("2_q7p53")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1239343446]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1401638699]
+layout_mode = 2
+
+[node name="texture" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1106785216]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+custom_maximum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("3_o8srm")
+expand_mode = 2
+
+[node name="name" type="Label" parent="MarginContainer/HBoxContainer" unique_id=962916261]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Increase Prices "
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1812124443]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="level" type="Label" parent="MarginContainer/HBoxContainer" unique_id=734090840]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "3/5"
+
+[node name="button" type="Button" parent="MarginContainer/HBoxContainer" unique_id=260851733]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 40)
+custom_maximum_size = Vector2(100, 40)
+layout_mode = 2
+theme = ExtResource("1_r0o4v")
+theme_override_font_sizes/font_size = 14
+text = "150$"
+
+[node name="desc" type="Label" parent="MarginContainer" unique_id=190023748]
+unique_name_in_owner = true
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 35)
+theme_override_colors/font_color = Color(0.72156864, 0.7254902, 0.7254902, 1)
+theme_override_font_sizes/font_size = 10
+text = "Increases incpme + 12% per upgrade"

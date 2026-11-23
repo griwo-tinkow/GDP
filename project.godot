@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="Gross Domestic Pollution"
+run/main_scene="uid://c0wj34con75yh"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://xk3q77dakicf"
 
 [autoload]
 
 GlobalValues="*uid://bcrkfor710ddn"
 SignalBus="*uid://bsxyctwii3obj"
+Audio="*uid://wj4lfje1iupd"
 
 [display]
 
@@ -33,9 +39,15 @@ project/assembly_name="Gross Domestic Pollution"
 
 folder_colors={
 "res://AutoLoads/": "gray",
+"res://Kenney/": "teal",
 "res://Main/": "red",
 "res://Main/Products/": "orange",
-"res://Main/Textures/": "teal"
+"res://Main/Textures/": "teal",
+"res://MainMenu/": "purple",
+"res://Money Icons/": "green",
+"res://UpgradeClasses/": "yellow",
+"res://UpgradeClasses/Eco/": "blue",
+"res://materials/": "green"
 }
 
 [physics]

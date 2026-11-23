@@ -1,0 +1,267 @@
+[gd_scene format=3 uid="uid://d5jknvcnvbq3"]
+
+[ext_resource type="Texture2D" uid="uid://btaqo1uxnxnhr" path="res://Main/Textures/Background/pixelart_starfield_diagonal_diffraction_spikes.png" id="1_0gov2"]
+[ext_resource type="Script" uid="uid://cdtjysc0lj8ba" path="res://MainMenu/Credits.cs" id="1_2rvot"]
+[ext_resource type="Script" uid="uid://bh41rkruncg44" path="res://MainMenu/creditslinks.cs" id="2_n222b"]
+[ext_resource type="Theme" uid="uid://ctwf07oqq0cn" path="res://MainMenuPlay.tres" id="3_o7h06"]
+
+[sub_resource type="Gradient" id="Gradient_dg77c"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2rvot"]
+gradient = SubResource("Gradient_dg77c")
+
+[sub_resource type="Animation" id="Animation_dg77c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fadeout:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ycdy4"]
+resource_name = "fading"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fadeout:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pn1m1"]
+_data = {
+&"RESET": SubResource("Animation_dg77c"),
+&"fading": SubResource("Animation_ycdy4")
+}
+
+[node name="Control" type="Control" unique_id=64424710]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2rvot")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=95954261]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0gov2")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=170397902]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1496582343]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "=== Credits ==="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1655300540]
+layout_mode = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_right = 70
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer" unique_id=1503443624]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+tile_scroll_hint = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer" unique_id=1910126274]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 200
+
+[node name="creditlinks" type="RichTextLabel" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=685054562]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 25
+theme_override_font_sizes/bold_italics_font_size = 25
+theme_override_font_sizes/italics_font_size = 25
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "Game Design & Programming:
+- Grigor T.(Griwo)
+
+
+Assets from:
+- Itch.io
+  > Blood_seller - [url=https://blood-seller.itch.io/factory-asset-v2-teaser]Factory asset v2 taser[/url]
+  > Anokolisa - [url=https://anokolisa.itch.io/free-pixel-art-asset-pack-topdown-tileset-rpg-16x16-sprites]Pixel Crawler Free[/url]
+  > Joulian MXM 187 - [url=https://joulianmxm187.itch.io/materials-2d-pixel]Materials 2D Pixel[/url]
+
+- Kenney.nl
+  > [url=https://kenney.nl/assets/impact-sounds]Impact Sounds[/url]
+  > [url=https://kenney.nl/assets/music-jingles]Music Jingles[/url]
+  > [url=https://kenney.nl/assets/ui-pack-pixel-adventure]UI Pack Pixel Adventure[/url]
+
+- Bandicamp.com
+  > One Man Symphony / UltiDigi - [url=https://onemansymphony.bandcamp.com/album/after-the-disaster]After The Disaster[/url]
+
+- OpenGameArt.org
+  > 6666 - [url=https://opengameart.org/content/pixel-pickaxe-and-axe]Pixel Pickaxe and Axe[/url]
+  > Bonsaiheldin - [url=https://opengameart.org/content/shiny-treasure-icons-16x16]Shiny treasure icons 16x16[/url]
+  > Color Optimist - [url=https://opengameart.org/content/conveyor-belts-spritesheet-anims]Conveyor Belts Spritesheet Anims[/url]
+  > victordelima - [url=https://opengameart.org/content/16-bit-animated-bomb]16-Bit Animated Bomb[/url]
+  > Kymiball - [url=https://opengameart.org/content/a-nice-gleamyrock]A Nice Gleamyrock[/url]
+  > Rawdanitsu - [url=https://opengameart.org/content/space-backgrounds-1]Space Backgrounds 1[/url]
+  > DaKal - [url=https://opengameart.org/content/2d-bars]2D Bars[/url]
+  > yd - [url=https://opengameart.org/content/background-space-track]Background Space Track[/url] (used upside-down)
+  > TrachinusDraco - [url=https://opengameart.org/content/tree-leaves]Tree Leaves[/url]
+  > SpacePie - [url=https://opengameart.org/content/arrow-signs64]Arrow Signs64[/url]
+  > j_hyde - [url=https://opengameart.org/content/rotating-pixel-art-earth]Rotating Pixel Art Earth[/url]
+  > Westbeam - [url=https://opengameart.org/content/space-background-1]Space Background[/url]
+  > Boysano - [url=https://opengameart.org/content/fire-32x32]Fire 32x32[/url]
+  > AustinJeong - [url=https://opengameart.org/content/ribbon]Ribbon[/url]
+
+
+Engine:
+- Built with [url=https://godotengine.org]Godot Engine[/url]"
+fit_content = true
+scroll_active = false
+script = ExtResource("2_n222b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2127965839]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=1826177768]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Most importantly,
+Thanks to YOU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=2131175233]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.56, 0.56, 0.56, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "for even considering downloading the game!"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=882827210]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.56, 0.56, 0.56, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "If I have missed someone write to me and I will quickly get it fixed!"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1066064576]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2" unique_id=382148221]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Documentation for the game will be released on its Github further down!
+
+
+
+
+
+
+
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2" unique_id=1403357307]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1737172617]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4392157, 0.4392157, 0.4392157, 1)
+theme_override_font_sizes/font_size = 8
+text = "Project made for Program week 2026 PGEE-Plovdiv, Bulgaria 
+&
+ Национален есенен турнир по информационни технологии „Джон Атанасов\" – София, декември 2026
+"
+vertical_alignment = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1777409510]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1270683320]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.44, 0.44, 0.44, 1)
+theme_override_font_sizes/font_size = 8
+text = "Game is free to use and promote, as long as its not redistributed!"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=1513977953]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="return" type="Button" parent="VBoxContainer" unique_id=1748610508]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("3_o7h06")
+text = "Return to Main Menu"
+
+[node name="Control2" type="Control" parent="VBoxContainer" unique_id=1696604624]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Fadeout" type="TextureRect" parent="." unique_id=1333799479]
+visible = false
+z_index = 140
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_2rvot")
+metadata/_edit_use_anchors_ = true
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1961754032]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_pn1m1")
+playback_auto_capture_transition_type = 1
+playback_auto_capture_ease_type = 3
+speed_scale = 5.0

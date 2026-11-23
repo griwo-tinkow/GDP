@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dmyp67rqua454"
+path="res://.godot/imported/One Man Symphony - UltiDigi⁄After The Disaster.ogg-a1e98e5034b9195fabb7eeab3646bd5b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Main/Audio/bg-music/One Man Symphony - UltiDigi⁄After The Disaster.ogg"
+dest_files=["res://.godot/imported/One Man Symphony - UltiDigi⁄After The Disaster.ogg-a1e98e5034b9195fabb7eeab3646bd5b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

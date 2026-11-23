@@ -1,0 +1,50 @@
+[gd_resource type="Theme" format=3 uid="uid://bkiv6u51dk0h3"]
+
+[ext_resource type="Texture2D" uid="uid://d0bbmwrkwty7d" path="res://Kenney/tile_0077.png" id="2_iv487"]
+[ext_resource type="Texture2D" uid="uid://bj2a1pdtpuobx" path="res://Kenney/tile_0075.png" id="3_iv487"]
+[ext_resource type="Texture2D" uid="uid://cqrc5yp35qb1l" path="res://Kenney/tile_0090.png" id="4_r2qmc"]
+[ext_resource type="Texture2D" uid="uid://bru6xaq3qjt8y" path="res://Kenney/tile_0073.png" id="4_vgswn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5kfxl"]
+texture = ExtResource("4_vgswn")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+modulate_color = Color(0.47843137, 0.47843137, 0.47843137, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eppe0"]
+texture = ExtResource("2_iv487")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ba7ab"]
+texture = ExtResource("3_iv487")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_frdgt"]
+texture = ExtResource("4_vgswn")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+modulate_color = Color(0.48, 0.48, 0.48, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oga0d"]
+texture = ExtResource("4_r2qmc")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxTexture_5kfxl")
+Button/styles/hover = SubResource("StyleBoxTexture_eppe0")
+Button/styles/normal = SubResource("StyleBoxTexture_ba7ab")
+Button/styles/pressed = SubResource("StyleBoxTexture_frdgt")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_oga0d")

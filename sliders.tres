@@ -1,0 +1,36 @@
+[gd_resource type="Theme" format=3 uid="uid://b6smspy8mor21"]
+
+[ext_resource type="Texture2D" uid="uid://t1ep4a2uahvi" path="res://Kenney/tile_0039.png" id="1_bqqxg"]
+[ext_resource type="Texture2D" uid="uid://bycne5odrl0rc" path="res://Kenney/tile_0055.png" id="1_kqq8p"]
+[ext_resource type="Texture2D" uid="uid://bh3ifhfqhij16" path="res://Kenney/tile_0042.png" id="1_syju0"]
+[ext_resource type="Texture2D" uid="uid://b5kk5lotndjsk" path="res://Kenney/tile_0041.png" id="2_a04v1"]
+[ext_resource type="Texture2D" uid="uid://dyigmjie83ptk" path="res://Kenney/tile_0054.png" id="2_y3vpl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_syju0"]
+texture = ExtResource("1_syju0")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rk6am"]
+texture = ExtResource("2_a04v1")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vtxd1"]
+texture = ExtResource("1_bqqxg")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[resource]
+HSlider/icons/grabber = ExtResource("1_kqq8p")
+HSlider/icons/grabber_disabled = ExtResource("2_y3vpl")
+HSlider/icons/grabber_highlight = ExtResource("2_y3vpl")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_syju0")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_rk6am")
+HSlider/styles/slider = SubResource("StyleBoxTexture_vtxd1")
