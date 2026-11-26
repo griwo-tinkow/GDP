@@ -7,6 +7,7 @@ namespace UpgradeClasses.Upgrades
         private static int _level;
         private double _appliedMultiplier = 0.2;
         private int _price = 150;
+        private int startingPrice = 150;
 
         public int Price => _price;
         public static int Level { get; private set; } = _level;
@@ -27,6 +28,11 @@ namespace UpgradeClasses.Upgrades
                 _price = (int)Math.Round(_price * 1.25);
 
             }
+        }
+        public void Reset()
+        {
+            _level = 0;
+            _price = startingPrice;
         }
 
     }

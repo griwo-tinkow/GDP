@@ -16,7 +16,7 @@ public partial class GlobalValues : Node
     public bool DoubleDrops { get; set; } = false;
     public bool HasFurnace { get; set; } = false;
 
-    private int _moneyPerSecond = 0;
+    private int _moneyPerSecond = 0 ;
     public int MoneyPerSecond => _moneyPerSecond;
 
     private float _speed = 500f;

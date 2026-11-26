@@ -3,6 +3,7 @@ using System;
 
 public partial class WindMills : Node
 {
+    private int startingPrice = 500000;
     private static int _level;
     private int _increase = 650;
     private int _price = 500000;
@@ -24,5 +25,11 @@ public partial class WindMills : Node
             GlobalValues.Instance.AddScore(_price, false);
             GlobalValues.Instance.CutMoneyPerSecond(_level);
         }
+    }
+
+    public void Reset()
+    {
+        _level = 0;
+        _price = startingPrice;
     }
 }

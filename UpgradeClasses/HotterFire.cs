@@ -7,6 +7,7 @@ namespace UpgradeClasses.Upgrades
         private static int _level;
         private static int _maxLevel = 6;
         private int _price = 750;
+        private int startingPrice = 750;
 
         public int Price => _price;
         public static int Level { get; private set; } = _level;
@@ -25,6 +26,11 @@ namespace UpgradeClasses.Upgrades
                 GlobalValues.Instance.AddScore(_price, false);
                 _price = (int)Math.Round(_price * 1.55);
             }
+        }
+        public void Reset()
+        {
+            _level = 0;
+            _price = startingPrice;
         }
 
     }

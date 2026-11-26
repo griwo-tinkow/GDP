@@ -119,7 +119,7 @@ theme = ExtResource("3_5q6it")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 45
-text = "   Back to Main Menu   "
+text = "  Quit   "
 
 [node name="Fadeout" type="TextureRect" parent="." unique_id=1879703484]
 z_index = 140

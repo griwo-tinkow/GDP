@@ -4,6 +4,7 @@ namespace UpgradeClasses.Upgrades
 {
     public partial class ConveyorSpeed : Node
     {
+        private int startingPrice = 320;
         private static int _level;
         private static int _maxLevel = 14;
         private int _price = 320;
@@ -25,6 +26,11 @@ namespace UpgradeClasses.Upgrades
                 GlobalValues.Instance.AddScore(_price, false);
                 _price = (int)Math.Round(_price * 1.45);
             }
+        }
+        public void Reset()
+        {
+            _level = 0;
+            _price = startingPrice;
         }
 
     }

@@ -11,6 +11,8 @@ public partial class SignalBus : Node
     [Signal] public delegate void BlockFurtherUpgradesEventHandler();
     [Signal] public delegate void HideUIEventHandler();
     [Signal] public delegate void WinningUpgradeBoughtEventHandler(bool win);
+    [Signal] public delegate void EndEventHandler();
+
     public override void _Ready()
     {
         Instance = this;

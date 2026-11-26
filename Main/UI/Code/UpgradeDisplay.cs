@@ -54,7 +54,25 @@ public partial class UpgradeDisplay : PanelContainer
 
         _upgradeButton.Pressed += OnUpgradePressed;
         UpdateUI();
+        SignalBus.Instance.End += ResetLevels;
 
+    }
+    public override void _ExitTree() => SignalBus.Instance.End -= ResetLevels;
+    private void ResetLevels()
+    {
+        factory.Reset();
+        fires.Reset();
+        bombsquad.Reset();
+        price.Reset();
+        tools.Reset();
+        conveyor.Reset();
+        furnace.Reset();
+        mine.Reset();
+        megaplex.Reset();
+        slow.Reset();
+        wind.Reset();
+        gea.Reset();
+        if (CurrentUpgrade == UpgradeType.Wind || CurrentUpgrade == UpgradeType.Slow || CurrentUpgrade == UpgradeType.End) Visible = false;
     }
     public void BlockButton()
     {

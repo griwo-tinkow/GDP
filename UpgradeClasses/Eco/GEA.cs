@@ -3,6 +3,7 @@ using System;
 
 public partial class GEA : Node
 {
+    private int startingPrice = 2500000;
     private int _price = 2500000;
     private static int _level;
     private static int _maxLevel = 1;
@@ -21,6 +22,13 @@ public partial class GEA : Node
         {
             GlobalValues.Instance.AddScore(GlobalValues.Instance.Score, false);
             _level++;
+        }
+    }
+    public void Reset()
+    {
+        {
+            _level = 0;
+            _price = startingPrice;
         }
     }
 }

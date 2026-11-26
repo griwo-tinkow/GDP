@@ -4,6 +4,7 @@ namespace UpgradeClasses.Upgrades
 {
     public partial class MineDeeper : Node
     {
+        private int startingPrice = 350;
         private static int _level;
         private static int _maxLevel = 20;
         private int _price = 350;
@@ -49,6 +50,11 @@ namespace UpgradeClasses.Upgrades
                 GlobalValues.Instance.AddScore(_price, false);
                 _price = (int)Math.Round(_price * 1.5);
             }
+        }
+        public void Reset()
+        {
+            _level = 0;
+            _price = startingPrice;
         }
 
     }

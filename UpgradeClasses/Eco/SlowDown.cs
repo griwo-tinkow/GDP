@@ -3,6 +3,7 @@ using System;
 
 public partial class SlowDown : Node
 {
+    private int startingPrice = 500000;
     private int _price = 500000;
     private static int _level;
     private static int _maxLevel = 1;
@@ -22,6 +23,14 @@ public partial class SlowDown : Node
             _level++;
             GlobalValues.Instance.AddScore(_price, false);
             GlobalValues.Instance.ResetSpeed();
+        }
+    }
+
+    public void Reset()
+    {
+        {
+            _level = 0;
+            _price = startingPrice;
         }
     }
 }

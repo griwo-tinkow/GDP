@@ -23,7 +23,9 @@ public partial class Ending : Control
         _anim.PlayBackwards("fading");
         AudioManager.Instance.PlayBuy();
         await ToSignal(_anim, AnimationPlayer.SignalName.AnimationFinished);
-        GetTree().ChangeSceneToFile("res://MainMenu/MainMenu.tscn");
+        GlobalValues.Instance.EcoMode = false;
+        SignalBus.Instance.EmitSignal(SignalBus.SignalName.End);
+        GetTree().Quit();
     }
 }
 

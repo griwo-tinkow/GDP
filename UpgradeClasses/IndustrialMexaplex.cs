@@ -7,6 +7,7 @@ namespace UpgradeClasses.Upgrades
         private static int _level;
         private int _increase = 7520;
         private int _price = 12700;
+        private int startingPrice = 12700;
 
         public int Price => _price;
         public static int Level { get; private set; } = _level;
@@ -25,6 +26,11 @@ namespace UpgradeClasses.Upgrades
                 GlobalValues.Instance.ChangeMoneyPerSecond(_increase);
             }
 
+        }
+        public void Reset()
+        {
+            _level = 0;
+            _price = startingPrice;
         }
 
     }

@@ -7,6 +7,7 @@ namespace UpgradeClasses.Upgrades
         private static int _level;
         private static int _maxLevel = 1;
         private int _price = 750000;
+        private int startingPrice = 750000;
 
         public int Price => _price;
         public static int Level { get; private set; } = _level;
@@ -27,6 +28,11 @@ namespace UpgradeClasses.Upgrades
 
 
             }
+        }
+        public void Reset()
+        {
+            _level = 0;
+            _price = startingPrice;
         }
 
     }

@@ -4,6 +4,7 @@ namespace UpgradeClasses.Upgrades
 {
     public partial class BuyFurnaces : Node
     {
+        private int startingPrice = 697500;
         private static int _level;
         private static int _maxLevel = 1;
         private int _price = 697500;
@@ -25,6 +26,11 @@ namespace UpgradeClasses.Upgrades
                 GlobalValues.Instance.AddScore(_price, false);
                 GlobalValues.Instance.HasFurnace = true;
             }
+        }
+        public void Reset()
+        {
+            _level = 0;
+            _price = startingPrice;
         }
 
     }
