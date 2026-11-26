@@ -1,1 +1,37 @@
-# Gross Domestic PollutionAn interactive 2D clicker/incremental game built in **Godot Engine (.NET / C#)** for the **National Autumn IT Tournament "John Atanasoff"** (Sofia, December 2026).Placed in the role of a corporate CEO, the player builds up resource extraction, buys upgrades, and eventually unlocks a three-stage deindustrialization sequence to finish the game.---## Gameplay & Features* **Core Loop:** Click and automate resource production, track currency and income per second (`$/s`), and buy upgrades from the slide-out upgrades panel (such as *Express Conveyors*, *Hotter Fires*, *Deeper Mines*, and more).* **Three-Stage Ending:** Once you hit the threshold (`3M` money, maxed upgrades, and required level milestones), you unlock the final disassembly upgrades to scale back and shut down industrial operations and win the game.* **Godot 4 + C# (.NET):** Built with modular C# scripts (`MainLogic`, `GlobalValues`, `UpgradeClasses`, `OreSpawner`, audio handling, and UI scenes).---## System Requirements* **OS:** Minimum: Linux (64-bit) / Windows 7 | Recommended: Linux (64-bit) / Windows 10 / 11* **CPU:** Minimum: Dual Core 2.0 GHz | Recommended: Quad Core 3.0 GHz+* **RAM:** Minimum: 200 MB | Recommended: 2 GB* **Graphics:** Minimum: OpenGL 3.3 compatible | Recommended: OpenGL 3.3 / Vulkan* **Storage:** Minimum: 150 MB | Recommended: 300 MB---## How to Download & Run### Windows1. Go to the **Releases** page of this repository and download the Windows Installer for your processor2. Install it3. Play### Linux1. Go to the **Releases** page of this repository and download the Linux archive (`.tar.gz` or `.zip`).2. Extract the archive into a folder of your choice—make sure the binary and its matching data folder/`.pck` file stay in the same directory.3. Open it or run it trough the console.
+# Gross Domestic Pollution
+
+An interactive 2D clicker/incremental game built in **Godot Engine (.NET / C#)** for the **National Autumn IT Tournament "John Atanasoff"** (Sofia, December 2026).
+
+Placed in the role of a corporate CEO, the player builds up resource extraction, buys upgrades, and eventually unlocks a three-stage deindustrialization sequence to finish the game.
+
+---
+
+## Gameplay & Features
+
+* **Core Loop:** Click and automate resource production, track currency and income per second (`$/s`), and buy upgrades from the slide-out upgrades panel (such as *Express Conveyors*, *Hotter Fires*, *Deeper Mines*, and more).
+* **Three-Stage Ending:** Once you hit the threshold (`3M` money, maxed upgrades, and required level milestones), you unlock the final disassembly upgrades to scale back and shut down industrial operations and win the game.
+* **Godot 4 + C# (.NET):** Built with modular C# scripts (`MainLogic`, `GlobalValues`, `UpgradeClasses`, `OreSpawner`, audio handling, and UI scenes).
+
+---
+
+## System Requirements
+
+* **OS:** Minimum: Linux (64-bit) / Windows 7 | Recommended: Linux (64-bit) / Windows 10 / 11
+* **CPU:** Minimum: Dual Core 2.0 GHz | Recommended: Quad Core 3.0 GHz+
+* **RAM:** Minimum: 200 MB | Recommended: 2 GB
+* **Graphics:** Minimum: OpenGL 3.3 compatible | Recommended: OpenGL 3.3 / Vulkan
+* **Storage:** Minimum: 150 MB | Recommended: 300 MB
+
+---
+
+## How to Download & Run
+
+### Windows
+1. Go to the **Releases** page of this repository and download the Windows Installer for your processor
+2. Install it
+3. Play
+
+### Linux
+1. Go to the **Releases** page of this repository and download the Linux archive (`.tar.gz`).
+2. Extract the archive into a folder of your choice—make sure the binary and its matching data folder/`.pck` file stay in the same directory.
+3. Open it or run it trough the console.
